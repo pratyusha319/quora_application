@@ -1,0 +1,24 @@
+{% extends 'app/dummy.html' %}
+{% block title %}
+    
+    <title>Registration</title>
+{% endblock %}
+
+{% block body_block %}
+    <center>
+    <h1>Registration Form</h1>
+    </center> 
+    <div    class="container"  >
+        
+            <form method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+                
+                    {{ufo.as_p}}
+                  
+                    <center><input type="submit" value="register"></center><br><br><br><br>
+                    
+                    
+            </form>
+       
+          
+{% endblock %}

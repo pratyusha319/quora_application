@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    {% block title %}
+       <title>Document</title>
+    {% endblock %}
+
+</head>
+<body>
+    <center>
+        <nav class="nav" style="background-color: #8ECAEF">
+            <a href="{% url 'admin:index' %}" class="nav-link">Admin-Page</a>
+            <a href="{% url 'registration' %}" class="nav-link">Registration</a>
+            <a href="{% url 'QuestionList' %}" class="nav-link">Home Page</a>
+            {% if user.is_authenticated %}
+                 <a href="{% url 'answer_question' %}"class="nav-link">answer the question</a>
+                 
+                 <a href="{% url 'user_logout' %}" class="nav-link">user_logout</a>
+                 <a href="{% url 'ask_question' %}"class="nav-link">askQuestion</a>
+            {% else %} 
+                 <a href="{% url 'user_login' %}" class="nav-link">user_login</a>
+            {% endif %}
+        </nav>
+        
+    </center>
+    {% block body_block %}
+    {% endblock %}
+</body>
+</html>

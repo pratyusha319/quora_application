@@ -1,0 +1,16 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+    <title>Home Page</title>
+{% endblock %}
+
+{% block body_block  %}
+<h1>List of Questions</h1>
+ {% for s in questions %}
+    {% csrf_token %}
+ <a href="{{s.pk}}"><h1>{{s.title}}</h1></a>
+
+  {% endfor %}
+
+ 
+{% endblock %}
